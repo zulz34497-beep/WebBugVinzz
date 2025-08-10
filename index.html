@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>🐉 TRoyZnyte 🐉 </title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .box {
+      border: 2px solid #00ff00;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px #00ff00;
+      width: 300px;
+      text-align: center;
+      display: none;
+    }
+
+    h2 {
+      text-shadow: 0 0 10px #00ff00;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      text-align: left;
+      font-weight: bold;
+      color: #00ff00;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      background-color: black;
+      border: 2px solid #00ff00;
+      border-radius: 8px;
+      color: #00ff00;
+      font-size: 16px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 5px #00ff00;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: black;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    button:hover {
+      background-color: #00ff00;
+      color: black;
+    }
+
+    #startButton {
+      display: block;
+      font-size: 24px;
+      padding: 15px 40px;
+    }
+
+    #apocalypse {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="startButton" onclick="startApp()">Start</button>
+
+  <div class="box" id="loginBox">
+    <h2>Login</h2>
+    <label>Username</label>
+    <input type="text" id="username" placeholder="Masukkan Username">
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Masukkan Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="box" id="apocalypse">
+    <h2>🐉VinzzFtCrash🐉</h2>
+    <input type="text" id="nomor" placeholder="628xxxxxxxxxxx">
+    <button>💀 FC Invisible</button>
+    <button>🧑‍🦯 Fc WA</button>
+    <button>🕓 Invis Delay</button>
+    <button>⚙️ Blank WhatsApp</button>
+    <button onclick="kirimBug()">🐞 Kirim Bug</button>
+    <button onclick="logout()">🚪 Logout</button>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="intro" src="https://files.catbox.moe/653ks2.m4a"></audio>
+  <audio id="musik" src="https://files.catbox.moe/653ks2.m4a" loop></audio>
+
+  <script>
+    function startApp() {
+      document.getElementById("startButton").style.display = "none";
+      document.getElementById("intro").play();
+      document.getElementById("intro").onended = () => {
+        document.getElementById("musik").play();
+      };
+      document.getElementById("loginBox").style.display = "block";
+    }
+
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user === "Vinzz" && pass === "Murbug ayano") {
+        alert("Si kontol login jirr! Target lu sp nihh🗿");
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("apocalypse").style.display = "block";
+      } else {
+        alert("Notifikasi: Username atau Password salah.");
+      }
+    }
+
+    function logout() {
+      const konfirmasi = confirm("Yakin ingin logout?");
+      if (konfirmasi) {
+        location.reload();
+      }
+    }
+
+    function kirimBug() {
+      const nomor = document.getElementById("nomor").value.trim();
+      if (!nomor || !/^628[0-9]{6,13}$/.test(nomor)) {
+        alert("Masukkinn nomor yang valid dan lengkap (contoh: 628xxxxx)");
+        return;
+      }
+      alert("Bye Kontol makanya jan tengil monyet: " + nomor);
+    }
+  </script>
+
+</body>
+</html>
